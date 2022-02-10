@@ -1,5 +1,6 @@
 # import nltk
-
+from caesar_cipher.corpus import name_list, word_list
+# import string
 # nltk.download()
 
 # IWT FJXRZ QGDLC UDM YJBETS DKTG IWT APOXAN HATTEXCV SDV
@@ -30,6 +31,27 @@ def decrypt(encrypted, key):
     return encrypt(encrypted, -key)
 
 
+def crack(encrypted):
+  # loop through each option
+    for i in range(26):
+      # star the word counter at 0
+        word_count = 0
+        # the variable words implements the encrypted function that takes in encrypted and i as arguments
+        words = encrypt(encrypted, i)
+        # the list is equal to the split of the encrypted sentence into separate words
+        list = words.split()
+        for text in list:
+          # iterate throughout each word.
+          #if there is a match either in the name list or the word list it will increase the counter by 1.
+            if text in name_list or text.lower() in word_list:
+                word_count += 1
+       # then check if the current word count is greater than 50% if so join all  the words together 
+        if (word_count/len(list)) > .5:
+            return " ".join(list)
+            # if the word list count is not greater than 50% return just an empty string 
+    return ""
+
+
 # def encrypt(plain, key):
 #     # plain: '12345'
 #     # key: 2
@@ -53,9 +75,6 @@ def decrypt(encrypted, key):
 
 # def decrypt(encrypted, key):
 #     return encrypt(encrypted, -key)
-
-def crack(encrypted):
-    pass
 
 if __name__ == "__main__":
     enc1 = encrypt('12345', 2)
