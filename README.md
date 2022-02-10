@@ -2,7 +2,7 @@
 
 ## Author: Brandon Mizutani
 
-Version: 1.0.0 (PR URL: [PR URL]())
+Version: 1.0.0 (PR URL: [PR URL](https://github.com/bran2miz/caesar-cipher))
 
 ## Overview
 
@@ -31,7 +31,9 @@ Python, Poetry, Cipher, Encrypt
 
 ## Change Log
 
-02-09-22 (8:40pm): 7 tests are passing are currently passing and now onto the crack function.
+02-09-22 (8:40pm): 7 tests are passing and now onto the crack function.
+
+02-09-22 (9:30pm): all unit tests are passing.
 
 ## Credit and Collaborations
 
